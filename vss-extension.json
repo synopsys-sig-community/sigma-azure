@@ -1,0 +1,71 @@
+{
+  "manifestVersion": 1,
+  "id": "synopsys-sigma-azure",
+  "version": "0.1.33",
+  "name": "Synopsys Sigma",
+  "publisher": "SynopsysSoftwareIntegrityGroup-CommunityProjects",
+  "public": false,
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "tags": [
+    "Sigma",
+    "Synopsys",
+    "Coverity",
+    "Continuous Integration",
+    "Security",
+    "Open Source",
+    "Build"
+  ],
+  "scopes": [
+    "vso.build_execute"
+  ],
+  "description": "Run Synopsys Sigma Static Analysis for your build",
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "icons": {
+    "default": "images/synopsys.png"
+  },
+  "branding": {
+    "color": "#00639c",
+    "theme": "dark"
+  },
+  "files": [
+    {
+      "path": "sigma-hub.html",
+      "addressable": true
+    },
+    {
+      "path": "tasks/synopsys-sigma-task"
+    },
+    {
+      "path": "images",
+      "addressable": true
+    },
+    {
+      "path": "node_modules/vss-web-extension-sdk/lib",
+      "addressable": true,
+      "packagePath": "lib"
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "overview.md"
+    }
+  },
+  "contributions": [
+    {
+      "id": "synopsys-sigma-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "tasks/synopsys-sigma-task"
+      }
+    }
+  ]
+}

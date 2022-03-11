@@ -1,0 +1,5 @@
+test_folder
+*.vsix
+.idea
+node_modules/
+.taskkey

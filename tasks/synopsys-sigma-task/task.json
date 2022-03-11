@@ -1,0 +1,43 @@
+{
+  "id": "5e9b6b5e-3130-47dc-89c5-77a58949f2cf",
+  "name": "SynopsysSigmaTask",
+  "friendlyName": "Synopsys Sigma",
+  "description": "Execute Synopsys Sigma Static Analysis against your build",
+  "author": "Synopsys",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 33
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "Run Synopsys Sigma for your build $(message)",
+  "inputs": [
+    {
+      "name": "AddTaskSummary",
+      "type": "boolean",
+      "defaultValue": true,
+      "label": "Add Sigma Task Summary",
+      "required": false,
+      "helpMarkDown": "If set to true, will add a summary of the sigma task to the build summary tab."
+    },
+    {
+      "name": "SigmaResultsFile",
+      "type": "string",
+      "label": "Sigma Results File",
+      "defaultValue": "sigma-results.json",
+      "required": true,
+      "helpMarkDown": "Filename that contains the Sigma results",
+    },
+  ],
+  "execution": {
+    "Node10": {
+      "target": "sigma-task.js"
+    }
+  }
+}

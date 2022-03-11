@@ -1,0 +1,37 @@
+{
+  "name": "sigma-azure",
+  "version": "0.1.33",
+  "description": "Execute Synopsys Sigma Static Analysis within Azure Pipeline",
+  "scripts": {
+    "build": "npm run installAll && cd tasks/synopsys-sigma-task/ && npm run build",
+    "package": "tfx extension create --manifest-globs vss-extension.json",
+    "tick": "node dev/tick.js && tfx extension create --manifest-globs vss-extension.json",
+    "clean": "rimraf ./dist && rimraf ./*.vsix",
+    "installAll": "npm install && npm dedupe && npm prune && cd tasks/synopsys-sigma-task/ && npm install && npm dedupe && npm prune"
+  },
+  "author": "Synopsys, Inc.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blackducksoftware/detect-ado"
+  },
+  "type": "module",
+  "devDependencies": {
+    "ncp": "^2.0.0",
+    "sync-request": "^6.1.0",
+    "tfx-cli": "^0.6.3",
+    "y18n": "^4.0.1",
+    "@types/jquery": "^2.0.34",
+    "rimraf": "^2.5.4",
+    "azure-pipelines-task-lib": "^3.0.4-preview.0",
+    "fs-extra": "^9.0.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.4",
+    "vss-web-extension-sdk": "^2.109.0"
+  },
+  "dependencies": {
+    "@types/q": "0.0.32",
+    "@types/node": "^14.14.5",
+    "ts-node": "^9.0.0"
+  }
+}
